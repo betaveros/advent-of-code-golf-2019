@@ -1,0 +1,16 @@
+v]{3÷«0Ã}Iv»mŠ .. 14 bytes
+
+{
+v]   .. As before.
+
+{    .. "Iterate" the following block:
+  3÷ .. integer divide by 3
+  «  .. subtract 2
+  0Ã .. and take the max with 0.
+}
+Iv   .. I, Iterate, repeats the above function and collects all resulting
+     .. distinct values. v modifies it as before to get "mapbind".
+»m   .. Map by taking the tail of each list, so we don't include the original
+     .. number.
+Š    .. Deeply sum.
+};
