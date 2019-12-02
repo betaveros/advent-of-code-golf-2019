@@ -1,0 +1,31 @@
+iIgHr2:12HudλX4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq .. 49 bytes
+
+{
+i   .. read full input
+Ig  .. read int groups thereof
+Hr  .. put this array into H, the default hoard
+2:  .. put 2 on the stack and duplicate it
+12 .. put 1 and 12 on the stack (yes that's U+0001 START OF HEADING sorry)
+Hud .. update H (Hu) with two disjoint argument groups on the stack (_d)
+λ   .. infinite loop:
+  X    .. take the current loop index i
+  4*   .. multiply by 4
+  4+y  .. mapbind to 4, which coerces to [0, 1, 2, 3], to get [4*i .. 4*i + 3]
+  Ht   .. "translate" this through hoards to get four relevant contents of memory
+  (    .. uncons to get the get opcode
+  3%"Q+*"=S .. find a one-char string that says what operation we want to do
+            .. this will be evaluated as Paradoc (Q is break out of the loop)
+  {    .. ignoring opstr:
+    )  .. uncons: [m1 m2] m3
+    \  .. swap, need indirect one more time
+    Ht .. m3 [mo1 mo2]
+    ~  .. m3 mo1 mo2
+  }u
+       .. m3 mo1 mo2 opstr
+  Pd   .. evaluate paradoc
+       .. m3 mval
+  Hu   .. update hoard at that position
+}
+;s  .. pop everything off the stack
+Hq  .. get the first element of the hoard
+};

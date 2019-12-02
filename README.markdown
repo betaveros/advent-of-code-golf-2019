@@ -17,3 +17,5 @@ Day-Level | Bytes | Code
 --- | -- | ----
 1-1 |  7 | `v]3÷v«š`
 1-2 | 14 | `v]{3÷«0Ã}Iv»mŠ`
+2-1 | 49 | `iIgHr2:12HudλX4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq`
+2-2 | 67 | `iIg–Ak{•Hr1h‰‡J¨~HudλX4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq19690720=}=`

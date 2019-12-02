@@ -1,0 +1,24 @@
+iIg–Ak{•Hr1h‰‡J¨~HudλX4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq19690720=}= .. 67 bytes
+.. takes a few minutes
+
+{
+i   .. read full input
+Ig  .. read int groups thereof
+–   .. pop and store it into the bullet variable
+Ak  .. 10 thousand
+{   .. a predicate, given 100 * noun + verb, to see if it works
+  •Hr .. put the bullet array, original program, into H, the default hoard
+  1h‰ .. divmod the index against 100
+  ‡   .. make a length-2 list
+  J   .. zip it with its indices
+  ¨   .. flatten
+  ~   .. expand
+  Hud .. do two updates
+  λ   .. infinite loop: same as level 1
+    X4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu
+  }
+  ;s  .. pop everything off the stack
+  Hq  .. get the first element of the hoard
+  19690720= .. is it equal?
+}=  .. find the index where this is true
+};
