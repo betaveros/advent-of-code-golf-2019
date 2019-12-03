@@ -7,7 +7,7 @@ v   .. Treat input as "values", so those that can be interpreted as
     .. ints, will.
 ]   .. Collect all input values into a list.
 3÷v .. Integer divide each value by 3.
-    .. ÷ is integer division. v modifies ÷ to get "mapbind", mnemonic ..
+    .. ÷ is integer division. v modifies ÷ to get "mapbind", mnemonic
     .. "vectorize": take the first value on the stack (here, the constant 3)
     .. and map integer-dividing by it across the second value of the stack.
 «š  .. Subtract 2 from each value and sum.

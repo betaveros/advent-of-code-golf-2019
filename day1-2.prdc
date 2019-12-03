@@ -12,5 +12,7 @@ Iv   .. I, Iterate, repeats the above function and collects all resulting
      .. distinct values. v modifies it as before to get "mapbind".
 »m   .. Map by taking the tail of each list, so we don't include the original
      .. number.
-Š    .. Deeply sum.
+Š    .. Deeply sum. (In hindsight we ought to be able to save a character here
+     .. and just have written »š. Unfortunately š does not sum deeply, even
+     .. though Š does.)
 };

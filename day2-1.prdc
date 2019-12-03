@@ -6,25 +6,34 @@ Ig  .. read int groups thereof
 Hr  .. put this array into H, the default hoard
 2:  .. put 2 on the stack and duplicate it
 12 .. put 1 and 12 on the stack (yes that's U+0001 START OF HEADING sorry)
+    .. I should make this α on the codepage or something. Anyway, paradoc's
+    .. push-constants-onto-stack story still needs improvement.
 Hud .. update H (Hu) with two disjoint argument groups on the stack (_d)
 λ   .. infinite loop:
   X    .. take the current loop index i
   4*   .. multiply by 4
   4+y  .. mapbind to 4, which coerces to [0, 1, 2, 3], to get [4*i .. 4*i + 3]
-  Ht   .. "translate" this through hoards to get four relevant contents of memory
-  (    .. uncons to get the get opcode
-  3%"Q+*"=S .. find a one-char string that says what operation we want to do
-            .. this will be evaluated as Paradoc (Q is break out of the loop)
+  Ht   .. "translate" this through hoard to get four relevant contents of memory
+       .. (honestly i'm so impressed by my past self's prescience to make this
+       .. a hoard trailer)
+  (    .. uncons to get the opcode
+  3%   .. mod 3: 1 -> 1, 2 -> 2, 99 -> 0
+  "Q+*"= .. find a char that says what operation we want to do; this will be
+         .. evaluated as Paradoc (Q is break out of the loop)
+         .. (a two-byte "index mod length of the list" built-in would save a
+         .. char here and seems like a good idea)
+  S    .. convert to string
+       .. stack: addr1 addr2 addr3 opstr
   {    .. ignoring opstr:
-    )  .. uncons: [m1 m2] m3
-    \  .. swap, need indirect one more time
-    Ht .. m3 [mo1 mo2]
-    ~  .. m3 mo1 mo2
-  }u
-       .. m3 mo1 mo2 opstr
-  Pd   .. evaluate paradoc
-       .. m3 mval
-  Hu   .. update hoard at that position
+    )    .. uncons: [addr1 addr2] addr3
+    \    .. swap, need to lookup in memory one more time
+    Ht   .. translate through hoard: stack: addr3 [val1 val2]
+    ~    .. expand onto stack: addr3 val1 val2
+  }u   .. do the preceding block under the top element of the stack
+       .. stack: addr3 val1 val2 opstr
+  Pd   .. evaluate the string as paradoc
+       .. stack: addr3 resultvalue
+  Hu   .. update hoard at that position to that value
 }
 ;s  .. pop everything off the stack
 Hq  .. get the first element of the hoard
