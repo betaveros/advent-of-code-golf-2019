@@ -1,4 +1,4 @@
-iIg–Ak{•Hr1h‰‡J¨~HudλX4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq19690720=}= .. 67 bytes
+iIg–Ak{•Hr1h‰‡J¨~HudHL,4/εHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq19690720=}= .. 66 bytes
 .. takes a few minutes
 
 {
@@ -14,8 +14,9 @@ Ak  .. 10 thousand
   ¨   .. flatten
   ~   .. expand
   Hud .. do two updates
-  λ   .. infinite loop: same as level 1
-    X4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu
+  HL,4/ .. get indices and break into chunks of 4 and
+  ε .. loop for each chunk of indices, same as level 1
+    Ht(3%"Q+*"=S{)\Ht~}uPdHu
   }
   ;s  .. pop everything off the stack
   Hq  .. get the first element of the hoard

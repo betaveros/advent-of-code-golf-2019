@@ -17,7 +17,7 @@ Day-Level | Bytes | Code
 --- | -- | ----
 1-1 |  7 | `v]3÷v«š`
 1-2 | 14 | `v]{3÷«0Ã}Iv»mŠ`
-2-1 | 49 | `iIgHr2:12HudλX4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq`
-2-2 | 67 | `iIg–Ak{•Hr1h‰‡J¨~HudλX4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq19690720=}=`
+2-1 | 48 | `iIgHr2:12HudHL,4/εHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq`
+2-2 | 66 | `iIg–Ak{•Hr1h‰‡J¨~HudHL,4/εHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq19690720=}=`
 3-1 | 35 | `l{","/µ(17:)‡{|3%(}y\I°~}Ás}d&LwŠmŒ`
 3-2 | 43 | `l{","/µ(17:)‡{|3%(}y\I°~}ÁsJ›ø›m}d+›ø»f‹šmŒ`

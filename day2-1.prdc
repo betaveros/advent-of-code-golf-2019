@@ -1,4 +1,4 @@
-iIgHr2:12HudλX4*4+yHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq .. 49 bytes
+iIgHr2:12HudHL,4/εHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq .. 48 bytes
 
 {
 i   .. read full input
@@ -9,10 +9,9 @@ Hr  .. put this array into H, the default hoard
     .. I should make this α on the codepage or something. Anyway, paradoc's
     .. push-constants-onto-stack story still needs improvement.
 Hud .. update H (Hu) with two disjoint argument groups on the stack (_d)
-λ   .. infinite loop:
-  X    .. take the current loop index i
-  4*   .. multiply by 4
-  4+y  .. mapbind to 4, which coerces to [0, 1, 2, 3], to get [4*i .. 4*i + 3]
+HL, .. take the length of H and convert it to indices
+4/  .. divide into chunks of 4
+ε   .. for each chunk:
   Ht   .. "translate" this through hoard to get four relevant contents of memory
        .. (honestly i'm so impressed by my past self's prescience to make this
        .. a hoard trailer)
