@@ -1,12 +1,10 @@
-l{","/0:‡\[ε(17:)‡{|3%(}y\Iχ¦Áu};}]»}d&LwŠmŒ .. 44 bytes
+l{","/µ(17:)‡{|3%(}y\I°~}Ás}d&LwŠmŒ .. 35 bytes
 
 {
 l .. two lines please
 { .. process twice:
   ","/ .. divide into comma-separated tokens
-  0:‡\ .. push a 0,0 tuple, swap under;
-  [ .. mark the stack;
-  ε .. for each token,
+  µ .. map across each token:
     ( .. uncons to get a U/D/L/R letter
     17:)‡   .. [17,18]
     {    .. we'll do this with both elements against the U/D/L/R ascii:
@@ -15,14 +13,10 @@ l .. two lines please
       (  .. subtract 1
     }y .. through brute force, this formula was found to produce a displacement vector
     \I .. swap, convert to integer (this is the number after U/D/L/R)
-    χ  .. then that many times:
-      ¦ .. duplicate both things on the stack then
-      Áu .. add the two things below the top one
-    }
-    ; .. delete the displacement vector
-  } .. done
-  ] .. collect it all, this is the list of points visited by the wire
-  » .. cut off the [0,0]
+    °  .. replicate
+    ~  .. and expand onto the stack (so we're kind of flatmapping)
+  }  .. done mapping
+  Ás .. scan with vectorizing addition; this is the list of points visited by the wire
 }d .. do this twice, to get the two wire paths
 & .. intersect them
 Lw .. take the absolute value of everything
