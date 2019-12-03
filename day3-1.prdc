@@ -1,4 +1,4 @@
-l{","/0:‡\[ε(5%[01‡:D¦Ìd\]=\Iχ¦Áu};}]»}d&LwŠmŒ .. 46 bytes
+l{","/0:‡\[ε(17:)‡{|3%(}y\Iχ¦Áu};}]»}d&LwŠmŒ .. 44 bytes
 
 {
 l .. two lines please
@@ -8,13 +8,12 @@ l .. two lines please
   [ .. mark the stack;
   ε .. for each token,
     ( .. uncons to get a U/D/L/R letter
-    5% .. mod 5 makes it distinct yay
-    [  .. start making a list
-      01‡ .. make [0,1]
-      :D  .. copy and reverse it to make [1,0]
-      ¦Ìd .. copy both and negate both
-      \   .. swap the top two
-    ]=  .. index into this crazy list by the ASCII U/D/L/R mod 5 to get a displacement vector
+    17:)‡   .. [17,18]
+    {    .. we'll do this with both elements against the U/D/L/R ascii:
+      |  .. binary or
+      3% .. mod 3
+      (  .. subtract 1
+    }y .. through brute force, this formula was found to produce a displacement vector
     \I .. swap, convert to integer (this is the number after U/D/L/R)
     χ  .. then that many times:
       ¦ .. duplicate both things on the stack then

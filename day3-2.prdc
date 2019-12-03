@@ -1,9 +1,9 @@
-l{","/0:‡\[ε(5%[01‡:D¦Ìd\]=\Iχ¦Áu};}]»J›ø›m}d+›ø»f‹šmŒ .. 54 bytes
+l{","/0:‡\[ε(17:)‡{|3%(}y\Iχ¦Áu};}]»J›ø›m}d+›ø»f‹šmŒ .. 52 bytes
 
 {
 l .. two lines please
 { .. same as before, get the two wire paths
-  ","/0:‡\[ε(5%[01‡:D¦Ìd\]=\Iχ¦Áu};}]»
+  ","/0:‡\[ε(17:)‡{|3%(}y\Iχ¦Áu};}]»
 
   J  .. zip with one-indexed indices
   ›ø .. "organize" by the last element, i.e. the pair of coordinates: grouping like pairs
