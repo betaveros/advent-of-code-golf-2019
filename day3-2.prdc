@@ -1,0 +1,18 @@
+l{","/0:‡\[ε(5%[01‡:D¦Ìd\]=\Iχ¦Áu};}]»J›ø›m}d+›ø»f‹šmŒ .. 54 bytes
+
+{
+l .. two lines please
+{ .. same as before, get the two wire paths
+  ","/0:‡\[ε(5%[01‡:D¦Ìd\]=\Iχ¦Áu};}]»
+
+  J  .. zip with one-indexed indices
+  ›ø .. "organize" by the last element, i.e. the pair of coordinates: grouping like pairs
+  ›m .. then just take the last element of each group
+  .. so now we have a list of [steps, [x, y]]
+}d
++   .. concatenate,
+›ø  .. "organize" by the last element again
+»f  .. filter for groups with nonempty tail, i.e. groups of size > 1,
+‹šm .. for each such group map to its step-count and sum,
+Œ   .. and take the min
+};
