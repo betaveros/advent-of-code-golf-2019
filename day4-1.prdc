@@ -1,0 +1,16 @@
+iIg~M…Sm$pfÛ_-L .. 15 bytes
+
+{
+i   .. get the entire input
+Ig  .. parse ints from it; this will read the - as a negative sign, oops
+~   .. expand the two-element list onto the stack
+M   .. negate the top list
+…   .. create the inclusive range of integers
+Sm  .. map (_m) by converting to strings (S)
+$pf .. filter (_f) for strings that are sorted ($p)
+Û_- .. filter out the strings that are unique (Û)
+    .. hmmm why don't we have a filter-out block trailer?
+    .. I had it in mind as j at some point but didn't include it?
+    .. or even a count-not-satisfying trailer or block? hmmm.
+L   .. compute the Length of the resulting list
+};

@@ -1,0 +1,10 @@
+iIg~M…Sm$pf{GLm2#}ç .. 19 bytes
+
+{
+iIg~M…Sm$pf .. as in day 1, produce a list of sorted strings of numbers
+{  .. count how many numbers satisfy this predicate:
+  G  .. group
+  Lm .. map by taking the length
+  2# .. find occurrences of 2
+}ç .. count by the above block
+};

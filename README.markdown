@@ -21,3 +21,5 @@ Day-Level | Bytes | Code
 2-2 | 66 | `iIg–Ak{•Hr1h‰‡J¨~HudHL,4/εHt(3%"Q+*"=S{)\Ht~}uPdHu};sHq19690720=}=`
 3-1 | 35 | `l{","/µ(17:)‡{\|3%(}y\I°~}Ás}d&LwŠmŒ`
 3-2 | 43 | `l{","/µ(17:)‡{\|3%(}y\I°~}ÁsJ›ø›m}d+›ø»f‹šmŒ`
+4-1 | 15 | `iIg~M…Sm$pfÛ_-L`
+4-2 | 19 | `iIg~M…Sm$pf{GLm2#}ç`
