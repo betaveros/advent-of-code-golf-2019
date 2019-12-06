@@ -1,0 +1,54 @@
+iIgHr{\H=b|}—G{•)+vHt}—T{\ABD0+3T)Gzu\a~Hu4}—O0λ·H=1h‰9%[E_Š_ObÞ_Ob{;1T~Ho2}{1T~G:P_;_?2}]=~•+} .. 95 bytes!!!
+
+{
+i   .. read full input
+Ig  .. read int groups thereof
+Hr  .. put this array into H, the default hoard
+
+.. helper function Get: mode value digit, value -> value or indexed value
+{\H=b|}—G
+.. helper function Translate: given x, get values of next x arguments
+{•)+vHt}—T
+
+.. helper function BinaryOperator
+.. parameter mode value, function -> do it and leave a pc increment
+{
+  \      .. swap operator, deal with it later
+  ABD    .. reversed digits of parameter mode value
+  0+     .. with a 0 on the end to ensure at least two elements
+  3T)    .. get three argumnets; uncons the last
+  Gzu    .. zip with helper Get under the last; stack: operator, source_operands, dest_address
+  \a     .. swap around the middle. stack: dest_address, source_operands, operator
+  ~      .. apply
+  Hu     .. update H
+  4      .. leave 4, indicating to increment pc by 4
+}—O
+
+0   .. pc
+λ   .. infinite loop
+  ·   .. assign pc to bullet
+  H=  .. index pc into H to get the "first value" of an instruction
+  1h‰ .. divmod 100 to get the parameter mode value and the opcode
+  9%
+  [
+    E_
+    Š_Ob .. sum
+    Þ_Ob .. product
+    { .. input
+      ;      .. pop the parameter mode value, not needed
+      1T~    .. get 1 arg
+      Ho     .. update 1 where specified
+      2
+    }
+    { .. output
+      1T~G   .. find argument, index again if imode
+      :      .. duplicate;
+        P_   .. if true, print
+        ;_   .. if false, pop
+      ?      .. if-else
+      2
+    }
+  ]=~
+  •+
+}
+};
