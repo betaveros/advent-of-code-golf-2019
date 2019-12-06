@@ -1,0 +1,14 @@
+l]")"/vÐDc–"YOU SAN"W•z_Iv¨ØÛç« .. 31 bytes
+.. here we assume "YOU" and "SAN" are not ancestors/descendants of each other
+
+{
+l]")"/vÐDc– .. construct dictionary as in day 1
+"YOU SAN"W  .. make the two-element list "YOU" and "SAN"
+•z_Iv       .. as before bind-map (_v) iterating (I) the block "lookup with 0 default" (•z_)
+            .. to get the traces of going from them until you reach a fictional 0 node
+¨           .. flatten; we just want the number of unique nodes in this list minus 2
+Ø           .. so organize into like elements and then
+Ûç          .. count how many lists have every element unique, which, since every list
+            .. has identical elements, counts one-element lists
+«           .. subtract 2
+};

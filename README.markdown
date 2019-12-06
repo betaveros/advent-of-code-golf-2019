@@ -23,3 +23,6 @@ Day-Level | Bytes | Code
 3-2 | 43 | `l{","/µ(17:)‡{\|3%(}y\I°~}ÁsJ›ø›m}d+›ø»f‹šmŒ`
 4-1 | 15 | `iIg~M…Sm$pfÛ_-L`
 4-2 | 19 | `iIg~M…Sm$pf{GLm2#}ç`
+5   | -  | (tbd)
+6-1 | 22 | `l]")"/vÐDc–•k•z_IvLm«š`
+6-2 | 31 | `l]")"/vÐDc–"YOU SAN"W•z_Iv¨ØÛç«`

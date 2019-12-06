@@ -1,0 +1,14 @@
+l]")"/vÐDc–•k•z_IvLm«š .. 22 bytes
+
+{
+l     .. lines
+]     .. in list
+")"/v .. split each by ")"
+Ð     .. reverse every list
+Dc    .. convert into a dictionary
+–     .. store into the bullet variable
+•k    .. get the bullet variable's list of keys
+•z_Iv .. bind-map (_v) iterating (I) the block "lookup with 0 default" (•z_)
+Lm    .. compute the length of every list
+«š    .. subtract 2 from every value and sum
+};
