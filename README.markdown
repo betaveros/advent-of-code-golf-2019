@@ -24,5 +24,6 @@ Day-Level | Bytes | Code
 4-1 | 15 | `iIg~M…Sm$pfÛ_-L`
 4-2 | 19 | `iIg~M…Sm$pf{GLm2#}ç`
 5-1 | 92 | `iIgHr{\H=b\|}—G{•)+vHt}—T{\ABD0+3T)Gzu\a~Hu4}—O0λ·H=1h‰9%[E_Š_ObÞ_Ob{1T~Ho2}{1T~G:P_&2}]=~•+}`
+5-2 | 127 | `iIgHr{\H=b\|}—G{•)+vHt}—T{\ABD0+3T)Gzu\a~Hu•4+}—O{ABD0+2TGz~•3+}—J0λ·H=1h‰9%[E_Š_ObÞ_Ob{1T~5Hu•»}{1T~GP•»}{J?}{J\?}<p_ObÎ_Ob]=~}`
 6-1 | 22 | `l]")"/vÐDc–•k•z_IvLm«š`
 6-2 | 31 | `l]")"/vÐDc–"YOU SAN"W•z_Iv¨ØÛç«`

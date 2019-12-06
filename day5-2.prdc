@@ -1,0 +1,66 @@
+iIgHr{\H=b|}—G{•)+vHt}—T{\ABD0+3T)Gzu\a~Hu•4+}—O{ABD0+2TGz~•3+}—J0λ·H=1h‰9%[E_Š_ObÞ_Ob{1T~5Hu•»}{1T~GP•»}{J?}{J\?}<p_ObÎ_Ob]=~} .. 127 bytes
+
+{
+i   .. read full input
+Ig  .. read int groups thereof
+Hr  .. put this array into H, the default hoard
+
+.. helper function Get: mode value digit, value -> value or indexed value
+{\H=b|}—G
+.. helper function Translate: given x, get values of next x arguments
+{•)+vHt}—T
+
+.. helper function BinaryOperator
+.. parameter mode value, function -> do it and leave a pc increment
+{
+  \      .. swap operator, deal with it later
+  ABD    .. reversed digits of parameter mode value
+  0+     .. with a 0 on the end to ensure at least two elements
+  3T)    .. get three arguments; uncons the last
+  Gzu    .. zip with helper Get under the last; stack: operator, source_operands, dest_address
+  \a     .. swap around the middle. stack: dest_address, source_operands, operator
+  ~      .. apply
+  Hu     .. update H
+  •4+    .. leave pc + 4
+}—O
+
+.. jump helper
+{
+  ABD    .. reversed digits of parameter mode value
+  0+     .. with a 0 on the end to ensure at least two elements
+  2T     .. get two arguments
+  Gz~    .. zip with helper Get and expand
+  •3+    .. normal pc
+  .. stack is first value, second value, pc+3
+}—J
+
+0   .. pc
+λ   .. infinite loop
+  ·   .. assign pc to bullet
+  H=  .. index pc into H to get the "first value" of an instruction
+  1h‰ .. divmod 100 to get the parameter mode value and the opcode
+  9%
+  [
+    E_ .. exit
+    Š_Ob .. sum
+    Þ_Ob .. product
+    { .. input
+      .. ;      .. pop the parameter mode value, not needed
+      .. we can actually leave junk on the stack since we explicitly terminate
+      1T~ .. get 1 arg
+      5Hu .. update 5 where specified
+      •»  .. increment pc by 2
+    }
+    { .. output
+      1T~G   .. find argument, index again if imode
+      P      .. print
+      .. (if false we'll leave it on the stack, but no harm)
+      •»  .. increment pc by 2
+    }
+    {J?}  .. jump if true
+    {J\?} .. jump if false
+    <p_Ob .. less than
+    Î_Ob  .. equal ("identical")
+  ]=~
+}
+};
