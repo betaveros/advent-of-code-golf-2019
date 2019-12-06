@@ -1,4 +1,4 @@
-iIgHr{\H=b|}—G{•)+vHt}—T{\ABD0+3T)Gzu\a~Hu4}—O0λ·H=1h‰9%[E_Š_ObÞ_Ob{;1T~Ho2}{1T~G:P_;_?2}]=~•+} .. 95 bytes!!!
+iIgHr{\H=b|}—G{•)+vHt}—T{\ABD0+3T)Gzu\a~Hu4}—O0λ·H=1h‰9%[E_Š_ObÞ_Ob{1T~Ho2}{1T~G:P_&2}]=~•+} .. 92 bytes
 
 {
 i   .. read full input
@@ -35,20 +35,21 @@ Hr  .. put this array into H, the default hoard
     Š_Ob .. sum
     Þ_Ob .. product
     { .. input
-      ;      .. pop the parameter mode value, not needed
+      .. ;      .. pop the parameter mode value, not needed
+      .. we can actually leave junk on the stack since we explicitly terminate
       1T~    .. get 1 arg
       Ho     .. update 1 where specified
-      2
+      2 .. increment pc by 2
     }
     { .. output
       1T~G   .. find argument, index again if imode
       :      .. duplicate;
-        P_   .. if true, print
-        ;_   .. if false, pop
-      ?      .. if-else
-      2
+        P_   .. print...
+      &      .. if true
+      .. (if false we'll leave it on the stack, but no harm)
+      2 .. increment pc by 2
     }
   ]=~
-  •+
+  •+ .. leave new pc on stack
 }
 };
