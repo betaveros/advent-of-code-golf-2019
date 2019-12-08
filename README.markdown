@@ -27,3 +27,6 @@ Day-Level | Bytes | Code
 5-2 | 127 | `iIgHr{\H=b\|}—G{•)+vHt}—T{\ABD0+3T)Gzu\a~Hu•4+}—O{ABD0+2TGz~•3+}—J0λ·H=1h‰9%[E_Š_ObÞ_Ob{1T~5Hu•»}{1T~GP•»}{J?}{J\?}<p_ObÎ_Ob]=~}`
 6-1 | 22 | `l]")"/vÐDc–•k•z_IvLm«š`
 6-2 | 31 | `l]")"/vÐDc–"YOU SAN"W•z_Iv¨ØÛç«`
+7   | -  | punted
+8-1 | 17 | `l150/'0#bœ"12"#yÞ`
+8-2 | 19 | `l5Ú150/™ gm',Á25/Pe`

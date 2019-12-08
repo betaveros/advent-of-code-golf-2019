@@ -1,0 +1,9 @@
+l150/'0#bœ"12"#yÞ .. 17 bytes
+
+{
+l      .. read line
+150/   .. chunks of size 150
+'0#bæ  .. find the minimum (_æ) of count-bound-to-0s
+"12"#y .. count 1s and 2s
+Þ      .. product
+};

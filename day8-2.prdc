@@ -1,0 +1,17 @@
+l5Ú150/™ gm',Á25/Pe .. 19 bytes*
+
+.. this actually produces output you need to read to get the answer but
+.. I think it's the best we can realistically do
+
+{
+l    .. read line
+5Ú   .. deep mod 5; we simply want ord(2) to get mapped to 0 and the others not
+150/ .. chunks of size 150
+™    .. transpose, so every row is the list of pixels in the same location
+ gm  .. map (_m) every transposed row by getting the first (_g) truthy (space) pixel
+',Á  .. vectorizing add by the character ',' mapping 3 to '/' and 4 to '0'
+     .. if you replace ',' with the nonprintable character with value 29 or 31,
+     .. things should be more readable, but this works in a pinch
+25/  .. chunks of 25
+Pe   .. print each
+};
