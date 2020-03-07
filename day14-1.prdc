@@ -1,0 +1,44 @@
+l]{φ44-}SW}m"FUEL"Ho{::¨{\›#Î}b=†q-u)H=M\)I\u÷M\2÷{~\iI*Hm}y;}CHÆ .. 65 bytes
+
+{
+l] .. list of lines
+{ .. map lines as:
+  φ44-} .. filtering by not 44 (",")
+  S .. stringify (sad, we shouldn't need this, filter is broken)
+  W .. breaking into words
+}m
+"FUEL"Ho .. set "FUEL" to 1 in the default hoard
+.. Repeatedly pick out something on no left sides, delete it, and convert its costs in the hoard.
+{
+  :: .. copy the master list twice
+  ¨ .. flatten the top copy
+  { .. block takes a list entry and a flattened list
+    \ .. swap
+    › .. get last word in list entry
+    # .. count the number of times the word appears in the list
+    Î .. check if it equals 1
+  }b= .. bind to the flattened list and find the first entry satisfying this
+  .. we now have an entry to eliminate, and below it the old master list
+  †q-u .. delete it. stack: new master list, current handling entry
+
+  )  .. unsnoc to get rest-of-list, last word
+  H= .. get how many of it we need so far
+  M  .. negate: this is a trick to extract rounding-up division later
+  \  .. swap: -needed, rest-of-list
+  )I .. unsnoc again and convert to number: this is how much the recipe produces
+  \u .. swap under: rest-of-list, -needed, produced
+  ÷M .. integer division and negate: this is the number of copies of this recipe
+  \  .. swap again. stack: copies needed, rest-of-list
+  2÷ .. divide into pairs, discarding leftovers
+  { .. for each pair:
+    ~ .. expand. stack: copies, consumption_as_string, name
+    \i .. swap name in
+    I* .. convert consumption to integer and map
+    Hm .. modify hoard by adding
+  }y .. bind the copies underneath and map
+  ;  .. this produced an empty list, don't need it
+}C .. Peekdo
+.. explicit version: "ORE"H=, but for reasonable recipe sets it will just be
+.. the maximum value ever needed for any ingredient, so just get that
+HÆ
+};

@@ -1,0 +1,32 @@
+l¬µÔ_,Y‡v~}:{{À:~GL1ÃÒ}vÊð}yÆ .. 29 bytes
+
+{
+l .. lines
+¬ .. reversed list
+µ .. map:
+  .. we have a list of "#" and "."
+  .. conveniently, the first is odd and the second is even
+  Ô_, .. filter the indices of odd characters
+  Y   .. push the index
+  ‡v  .. bind it to the (make a size-2 array) function and map
+  ~   .. expand this
+}
+.. we now have a list of coordinates of '#'s
+: .. duplicate
+.. map-bind this function:
+{
+  .. takes a list of points and a point
+  { .. bind-map this function, computing a "reduced" displacement:
+    À  .. vectorizing subtraction
+    :~ .. duplicate and expand
+    G  .. takes the GCD; unfortunately I implemeneted this however, and it can be negative
+    L  .. take the absolute value
+    1Ã .. max with 1, so we don't divide by 0, because a point will be matched with itself
+    Ò  .. vectorizing division
+  }v
+  Êð .. count in how many distinct reduced displacement vectors exist a nonzero
+     .. coordinate, so we ignore the self-match
+     .. i'm surprised ð got reused, although I wish it were "map, then count distinct results"
+}y
+Æ .. take the maximum
+};

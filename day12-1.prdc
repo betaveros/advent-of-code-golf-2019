@@ -1,0 +1,38 @@
+l]µIg:0Ó‡}1kχ:{‹m~u:au{¯U}zyÁeÁk‡D¸}v}{LšmÞ}š .. 45 bytes
+
+{
+l .. lines
+] .. list
+µ .. map:
+  Ig .. extract ints
+  :  .. copy
+  0Ó .. vectorizing multiply by 0, to get an equally long list of 0s
+  ‡  .. wrap into a list of size 2
+}
+.. we now have a list of four [pt, velocity] pairs
+1kχ .. do this 1000 times:
+  : .. copy, as we want to vectorize this against itself
+  {  .. take a [pt, velocity] and the list of all [pt,velocity] pairs
+     .. gravity of a moon against itself is fine, yay.
+     .. X is the single [pt, velocity] so we don't particularly need to save it
+     ‹m .. get all the pts out
+     ~u .. expand the bottom list: stack has pt, velocity, list of pts
+     :au .. copy pt again: stack has pt, velocity, pt, list of points
+     .. to compute a single dimension gravity diff, take the minus the other
+     .. way, then U to get the signum
+     .. zip by that to get a full gravity diff vector
+     .. bindmap that to get the list of gravity diffs
+     {¯U}zy
+     .. stack has pt, velocity, list of gravity diff
+     Áe .. add every gravity diff onto velocity
+     .. stack has pt, new velocity
+     Ák .. stack has pt, new velocity, new pt
+     ‡D .. make size-2 list, reverse
+     ¸  .. pop the old pt
+  }v
+}
+.. we have four [pt, velocity] pairs
+.. sum by product by sum by absolute value
+{LšmÞ}š
+.. why isn't product a trailer, i'm sad
+};

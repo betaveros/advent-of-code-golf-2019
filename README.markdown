@@ -30,3 +30,12 @@ Day-Level | Bytes | Code
 7   | -  | punted
 8-1 | 17 | `l150/'0#bœ"12"#yÞ`
 8-2 | 19 | `l5Ú150/™ gm',Á25/Pe`
+9   | -  | punted
+10-1 | 29 | `l¬µÔ_,Y‡v~}:{{À:~GL1ÃÒ}vÊð}yÆ`
+10-2 | -  | punted
+11   | -  | punted
+12-1 | 45 | `l]µIg:0Ó‡}1kχ:{‹m~u:au{¯U}zyÁeÁk‡D¸}v}{LšmÞ}š`
+12-2 | -  | punted
+13   | -  | punted
+14-1 | 65 | `l]{φ44-}SW}m"FUEL"Ho{::¨{\›#Î}b=†q-u)H=M\)I\u÷M\2÷{~\iI*Hm}y;}CHÆ`
+14-2 | 94 | `l]{φ44-}SW}m–Aý040χ+k2÷:"FUEL"\Hu•{::¨{\›#Î}b=†q-u)H=M\)I\u÷M\2÷{~\iI*Hm}y;}C;HjÆCý>{\a;}¸_?}¸`

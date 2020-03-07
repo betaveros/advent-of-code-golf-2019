@@ -1,0 +1,60 @@
+l]{φ44-}SW}m–Aý040χ+k2÷:"FUEL"\Hu•{::¨{\›#Î}b=†q-u)H=M\)I\u÷M\2÷{~\iI*Hm}y;}C;HjÆCý>{\a;}¸_?}¸ .. 94 bytes
+
+{
+l] .. list of lines
+{ .. map lines as:
+  φ44-} .. filtering by not 44 (",")
+  S .. stringify (sad, we shouldn't need this, filter is broken)
+  W .. breaking into words
+}m– .. pop and assign to bullet
+
+Aý .. 10**10, a random high threshold to binary search between
+0 .. the lower bound
+.. just run this block enough times:
+40χ
++k2÷: .. add the bounds together without deleting them, int-divide by 2, make yet another copy
+
+"FUEL"\Hu .. set "FUEL" to that value in the default hoard
+• .. push the original master list
+.. Repeatedly pick out something on no left sides, delete it, and convert its costs in the hoard.
+{
+  :: .. copy the master list twice
+  ¨ .. flatten the top copy
+  { .. block takes a list entry and a flattened list
+    \ .. swap
+    › .. get last word in list entry
+    # .. count the number of times the word appears in the list
+    Î .. check if it equals 1
+  }b= .. bind to the flattened list and find the first entry satisfying this
+  .. we now have an entry to eliminate, and below it the old master list
+  †q-u .. delete it. stack: new master list, current handling entry
+
+  )  .. unsnoc to get rest-of-list, last word
+  H= .. get how many of it we need so far
+  M  .. negate: this is a trick to extract rounding-up division later
+  \  .. swap: -needed, rest-of-list
+  )I .. unsnoc again and convert to number: this is how much the recipe produces
+  \u .. swap under: rest-of-list, -needed, produced
+  ÷M .. integer division and negate: this is the number of copies of this recipe
+  \  .. swap again. stack: copies needed, rest-of-list
+  2÷ .. divide into pairs, discarding leftovers
+  { .. for each pair:
+    ~ .. expand. stack: copies, consumption_as_string, name
+    \i .. swap name in
+    I* .. convert consumption to integer and map
+    Hm .. modify hoard by adding
+  }y .. bind the copies underneath and map
+  ;  .. this produced an empty list, don't need it
+}C .. Peekdo
+; .. pop the empty list
+.. For part 2, clear the hoard with Hj at the same time as using it one last time
+.. explicit version: "ORE"Hj=, but for reasonable recipe sets it will just be
+.. the maximum value ever needed for any ingredient, so just get that
+HjÆ
+
+Cý> .. do you need more than 1 trillion ore?
+.. stack: high, low, mid, is_too_much
+{\a;}¸_?
+}
+¸ .. drop the high
+};
